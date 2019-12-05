@@ -10,7 +10,7 @@ module Icon
     rar rm rmvb rtf sea ses sit sitx ss swf tgz thm tif tmp torrent ttf txt
     vcd vob wav wma wmv wps xls xlsx xpi zip
     }.inject({}) do |known_extensions, ext|
-      known_extensions[ext] = "/assets/fileicons/file_extension_#{ext}.png"
+      known_extensions[ext] = "fileicons/file_extension_#{ext}.png"
       known_extensions
     end
 
@@ -20,6 +20,6 @@ module Icon
 
   def self.for_ext file_extension
     ext = file_extension.start_with?('.') ? file_extension[1..-1] : file_extension
-    KNOWN_EXTENSIONS[ext.downcase] || '/assets/fileicons/file_extension_unknown.png'
+    KNOWN_EXTENSIONS[ext.downcase] || 'fileicons/file_extension_unknown.png'
   end
 end
